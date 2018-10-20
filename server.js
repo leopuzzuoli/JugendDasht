@@ -43,7 +43,11 @@ function runs(req, res) {
 
   if(get.pathname.contains("/redirect.html")){
     try{
+<<<<<<< HEAD
     console.log("GOT OAUTH 2.0 REQUEST WITH GET PARAM code: " + get.query.code);
+=======
+    console.log("GOTTEN OAUTH 2.0 REQUEST WITH GET PARAM code: " + get.query.code);
+>>>>>>> 1882c4eb9398a4a8d171b0aefaa0b35120ccecf6
   }
   catch(Error){
     console.log("Error in oauth code");
