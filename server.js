@@ -125,5 +125,5 @@ function runs(req, res) {
 
 }
 
-server.listen(8080);
+server.listen(80);
 console.log("Server running on localhost:8080");
