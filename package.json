@@ -1,0 +1,30 @@
+{
+  "name": "jugenddasht",
+  "version": "1.0.0",
+  "description": "A dashboard for Jugend Hackt",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/k783s4/JugendDasht.git"
+  },
+  "keywords": [
+    "server",
+    "dashboard",
+    "overview",
+    "website",
+    "productivity"
+  ],
+  "author": "Leoanrdo Puzzuoli Damian Kunze Florin MXMS",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/k783s4/JugendDasht/issues"
+  },
+  "homepage": "https://github.com/k783s4/JugendDasht#readme"
+}
