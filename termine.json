@@ -1,0 +1,32 @@
+{
+    "Freitag": {
+        "Anreise": "15:00",
+        "Begrüßung": "17:00",
+        "Abendessen": "18:00",
+        "Brainstorming": "19:00",
+        "Vortrag und Diskussion": "21.15",
+        "Bus fährt & Licht aus": "23:00"
+    },
+    "Samstag": {
+        "Frühstück im Hostel": "7:00",
+        "Fahrten zum, Theater": "8:00",
+        "Start für alle": "9:00",
+        "Gruppenfindung": "9:00",
+        "Lightningtalks": "12:00",
+        "Mittag": "13:00",
+        "Lightningtalks": "14:00",
+        "Abendessen": "18:00",
+        "Präsentationen üben": "19:00",
+        "Bus fährt & Licht aus": "23:00"
+    },
+    "Sonntag": {
+        "Frühstück im Hostel": "7:00",
+        "Fahrten zum, Theater": "8:00",
+        "Start für alle": "9:00",
+        "Alle Projekte fertig" : "11:00",
+        "Gäste und Presse eingetroffen" : "11:00",
+        "Präsentaion der Projekte" : "11:30",
+        "Verabschiedung" : "14:30",
+        "Abreise" : "14:45"
+    }
+}
