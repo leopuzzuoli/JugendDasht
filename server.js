@@ -40,6 +40,15 @@ function runs(req, res) {
   console.log(url.parse(req.url, true));
   //analyze the GET request
   let get = url.parse(req.url, true);
+
+  if(get.pathname.contains("/redirect.html")){
+    try{
+    console.log("GOTTEN OAUTH 2.0 REQUEST WITH GET PARAM code: " + get.query.code);
+  }
+  catch(Error){
+    console.log("Error in oauth code");
+  }
+}
   //if the requests does not ask for a specific site:
   if (get.pathname === "/") {
     console.log("NO REQUEST: Pathname " + __dirname + "/website/index.html");
