@@ -1,4 +1,5 @@
 const https = require('https');
+let fs = require("fs");
 
 let images = [];
 
@@ -17,7 +18,8 @@ https.get('https://www.instagram.com/explore/tags/jugendhackt/?__a=1', (resp) =>
       images.push(jsondata.graphql.hashtag.edge_hashtag_to_media.edges[i].node.display_url);
     }
     console.log(images);
-    module.exports = images;
+    console.log(JSON.stringify(images));
+    fs.writeFile('./website/daten/instafiles.json', JSON.stringify(images), 'utf8',function(){console.log("Toll gemacht");});
   });
 
 }).on("error", (err) => {
