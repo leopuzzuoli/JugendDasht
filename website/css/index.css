@@ -133,3 +133,9 @@ a:focus, a:hover {
 footer {
     padding: 5rem 0;
 }
+
+#timeline{
+  margin-top: 20px;
+  margin-left: 20%;
+
+}
