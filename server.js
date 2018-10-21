@@ -5,7 +5,8 @@ let url = require("url");
 let fs = require("fs");
 let addons = require("./addons");
 let rightsaccess = require("./checkaccessrights");
-let config = require("./content/server_only/config.js")
+let config = require("./content/server_only/config.js");
+let runnode = require("./runnode.js");
 let server;
 
 if (process.argv[2] === "-s") {
@@ -44,6 +45,11 @@ function runs(req, res) {
   if(get.pathname.contains("/redirect.html")){
     try{
     console.log("GOT OAUTH 2.0 REQUEST WITH GET PARAM code: " + get.query.code);
+    // Now we can run a script and invoke a callback when complete, e.g.
+    runnode.runScript('./OAuth.js', function (err) {
+        if (err) throw err;
+        console.log('Error running Oauth script');
+    });
   }
   catch(Error){
     console.log("Error in oauth code");
