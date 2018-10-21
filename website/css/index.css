@@ -19,7 +19,13 @@ body {
 .col-sm {
     margin-left: 5px;
     color: white;
-    width: 25% !important;
+    width: 33.33%;
+}
+
+.timeline-holder {
+    width: 100%;
+    height: auto;
+    
 }
 /* --------------------------------------------- */
 
