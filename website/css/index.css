@@ -25,7 +25,11 @@ body {
 .timeline-holder {
     width: 100%;
     height: auto;
-    
+
+}
+
+.masthead img {
+    width: 60%;
 }
 /* --------------------------------------------- */
 

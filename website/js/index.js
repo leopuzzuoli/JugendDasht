@@ -2,15 +2,15 @@ $('document').ready(() => {
     $('.networks .col-sm').css('height', $('window').height())
     //
     //
-    /*function getInstaImages() {
+    function getInstaImages() {
         $.ajax({
-            url: "daten/instafiles.json",
+            url: "daten/instafiles.txt",
             success: function(result) {
-                console.log(result)
+                var splitted = result.split(",")
                 $("#instaLatest").html("")
-                for (var i = 0; i < result.length; i++) {
+                for (var i = 0; i < splitted.length; i++) {
                     var newImg = document.createElement('img')
-                    $(newImg).attr("src", result[i])
+                    $(newImg).attr("src", splitted[i])
                     $(newImg).attr("class", "insta-image")
                     $("#instaLatest").append(newImg);
                 }
@@ -18,24 +18,25 @@ $('document').ready(() => {
         });
     }
     getInstaImages()
+    
     setInterval(function() {
         getInstaImages()
-    }, 5000);*/
+    }, 5000);
     //
-   /* $.ajax({
-        url: "daten/tweets.txt",
-        success: function(result) {
-            console.log(result)
-            var sources = result.split(",")
-            console.log(sources)
-            for (var i = sources.length - 1; i >= 0; i--) {
-                var newText = document.createElement('p')
-                console.log(newText)
-                $(newText).text(sources[i])
-                $("#twitterLatest").append(newText);
-            }
-        }
-    });*/
+    /* $.ajax({
+         url: "daten/tweets.txt",
+         success: function(result) {
+             console.log(result)
+             var sources = result.split(",")
+             console.log(sources)
+             for (var i = sources.length - 1; i >= 0; i--) {
+                 var newText = document.createElement('p')
+                 console.log(newText)
+                 $(newText).text(sources[i])
+                 $("#twitterLatest").append(newText);
+             }
+         }
+     });*/
     //
     $(function() {
         $('#timeline').timespace({
