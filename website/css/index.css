@@ -5,13 +5,17 @@ body {
     overflow-x: hidden;
 }
 .networks {
-    max-height: ;
+    height: 600px;
 }
+
 .insta-image {
     width: 100%;
     height: auto;
 }
-.insta-latest {}
+#instaLatest {
+    overflow-y: scroll;
+    height: 650px;
+}
 .col-sm {
     margin-left: 5px;
     color: white;
@@ -26,9 +30,7 @@ a:focus, a:hover {
     text-decoration: none;
     color: #3c6360;
 }
-.networks .col-sm {
-    height: 600px;
-}
+
 .masthead {
     position: relative;
     width: 100%;
