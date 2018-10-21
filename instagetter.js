@@ -23,7 +23,7 @@ function dataminer() {
           }
           console.log(images);
           console.log(JSON.stringify(images));
-          fs.writeFile('./website/daten/instafiles.json', JSON.stringify(images), 'utf8', function() {
+          fs.writeFile('./website/daten/instafiles.txt', images, 'utf8', function() {
             console.log("Toll gemacht");
           });
         });
