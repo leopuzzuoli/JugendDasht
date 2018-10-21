@@ -4,24 +4,21 @@ body {
     background-color: rgba(22, 22, 22, 1);
     overflow-x: hidden;
 }
-
 .networks {
     max-height: ;
 }
 .insta-image {
     width: 100%;
     height: auto;
-    margin-left: 2px;
 }
-.insta-latest {
-
-}
+.insta-latest {}
 .col-sm {
-  margin-right: 2px;
-  color: white;
-  width: 25% !important;
+    margin-left: 5px;
+    color: white;
+    width: 25% !important;
 }
 /* --------------------------------------------- */
+
 a {
     color: #64a19d;
 }

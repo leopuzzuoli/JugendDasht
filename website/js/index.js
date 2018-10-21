@@ -27,11 +27,14 @@ $('document').ready(() => {
     $.ajax({
         url: "daten/tweets.txt",
         success: function(result) {
-            var sources = better.split(",")
+            console.log(result)
+            var sources = result.split(",")
+            console.log(sources)
             for (var i = sources.length - 1; i >= 0; i--) {
-                var newImg = document.createElement('div')
-                $(newImg).text(sources[i])
-                $("#twitterLatest").append(newImg);
+                var newText = document.createElement('p')
+                console.log(newText)
+                $(newText).text(sources[i])
+                $("#twitterLatest").append(newText);
             }
         }
     });
