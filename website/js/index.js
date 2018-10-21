@@ -1,14 +1,8 @@
 $('document').ready(() => {
     $('.networks .col-sm').css('height', $('window').height())
     //
-    $('.col-sm').mouseenter((data) => {
-        if ($(data.target)) {
-            $('.col-sm').css('width', '20%')
-        }
-        $(data.target).next('.col-sm').css('width', '40%')
-    })
     //
-    setInterval(function() {
+    function getInstaImages() {
         $.ajax({
             url: "daten/instafiles.txt",
             success: function(result) {
@@ -16,6 +10,7 @@ $('document').ready(() => {
                 better = better.replace(/\"/g, "")
                 better = better.substring(0, better.length - 2)
                 var sources = better.split(",")
+                $("#instaLatest").html("")
                 for (var i = sources.length - 1; i >= 0; i--) {
                     var newImg = document.createElement('img')
                     $(newImg).attr("src", sources[i])
@@ -24,9 +19,13 @@ $('document').ready(() => {
                 }
             }
         });
+    }
+    getInstaImages()
+    setInterval(function() {
+        getInstaImages()
     }, 5000);
     //
-    $.ajax({
+   /* $.ajax({
         url: "daten/tweets.txt",
         success: function(result) {
             console.log(result)
@@ -39,7 +38,7 @@ $('document').ready(() => {
                 $("#twitterLatest").append(newText);
             }
         }
-    });
+    });*/
     //
     $(function() {
         $('#timeline').timespace({
