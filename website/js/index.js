@@ -4,16 +4,13 @@ $('document').ready(() => {
     //
     function getInstaImages() {
         $.ajax({
-            url: "daten/instafiles.txt",
+            url: "daten/instafiles.json",
             success: function(result) {
-                var better = result.replace(/\[/g, "")
-                better = better.replace(/\"/g, "")
-                better = better.substring(0, better.length - 2)
-                var sources = better.split(",")
+                console.log(result)
                 $("#instaLatest").html("")
-                for (var i = sources.length - 1; i >= 0; i--) {
+                for (var i = 0; i < result.length; i++) {
                     var newImg = document.createElement('img')
-                    $(newImg).attr("src", sources[i])
+                    $(newImg).attr("src", result[i])
                     $(newImg).attr("class", "insta-image")
                     $("#instaLatest").append(newImg);
                 }
