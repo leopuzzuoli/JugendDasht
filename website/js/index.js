@@ -29,10 +29,9 @@ $('document').ready(() => {
         success: function(result) {
             var sources = better.split(",")
             for (var i = sources.length - 1; i >= 0; i--) {
-                var newImg = document.createElement('img')
-                $(newImg).attr("src", sources[i])
-                $(newImg).attr("class", "insta-image")
-                $("#insta").append(newImg);
+                var newImg = document.createElement('div')
+                $(newImg).text(sources[i])
+                $("#twitterLatest").append(newImg);
             }
         }
     });

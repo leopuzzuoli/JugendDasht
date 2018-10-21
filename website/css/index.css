@@ -5,11 +5,16 @@ body {
     overflow-x: hidden;
 }
 
-
+.networks {
+    max-height: ;
+}
 .insta-image {
-    width: 50%;
+    width: 100%;
     height: auto;
-    margin: 2px;
+    margin-left: 2px;
+}
+.insta-latest {
+
 }
 .col-sm {
   margin-right: 2px;
