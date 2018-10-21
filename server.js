@@ -22,13 +22,11 @@ if (process.argv[2] === "-s") {
       pfx: fs.readFileSync(config.pfx),
       passphrase: config.passphrase
     };
-  }
-  else{
+  } else {
     console.log("the argument following -s is incorrect, it has to either be 'pem' or 'pfx'");
   }
-server = https.createServer(options, (req, res) => runs(req, res));
-}
-else {
+  server = https.createServer(options, (req, res) => runs(req, res));
+} else {
   server = http.createServer((req, res) => runs(req, res));
 }
 
@@ -43,23 +41,50 @@ function runs(req, res) {
   //analyze the GET request
   let get = url.parse(req.url, true);
 
-  if(get.pathname.contains("/redirect.html")){
-    try{
-    console.log("GOT OAUTH 2.0 REQUEST WITH GET PARAM code: " + get.query.code);
-    // Now we can run a script and invoke a callback when complete, e.g.
-    runnode.runScript('./OAuth.js', function (err) {
+  if (get.pathname.contains("/redirect.html")) {
+    try {
+      console.log("GOT OAUTH 2.0 REQUEST WITH GET PARAM code: " + get.query.code);
+      // Now we can run a script and invoke a callback when complete, e.g.
+      runnode.runScript('./OAuth.js', function(err) {
         if (err) throw err;
         console.log('Error running Oauth script');
-    });
-    runnode.runScript('./.js', function (err) {
+      });
+      runnode.runScript('./.js', function(err) {
         if (err) throw err;
         console.log('Error running Oauth script');
-    });
+      });
+    } catch (Error) {
+      console.log("Error in oauth code");
+    }
   }
-  catch(Error){
-    console.log("Error in oauth code");
+  try {
+    if (get.pathname.contains("instafiles.json")) {
+      console.log("JSON FILE REQ");
+      fs.readFile(__dirname + "/website/daten/instafiles.json", (err, data) => {
+        if (data) {
+          res.writeHead(200, {
+            "Content-type": "application/json"
+          });
+          res.write(data);
+          res.end();
+          console.log("RETURN");
+          return
+        }
+        if (err) {
+          console.log(err.toString());
+          console.log("RETURN");
+          return
+        }
+      });
+      console.log("RETURN");
+      return
+    }
+  } catch (Error) {
+    res.end();
+    console.log(Error);
+    console.log("RETURN");
+    return
   }
-}
   //if the requests does not ask for a specific site:
   if (get.pathname === "/") {
     console.log("NO REQUEST: Pathname " + __dirname + "/website/index.html");
@@ -108,6 +133,7 @@ function runs(req, res) {
           }
           fs.readFile(__dirname + get.pathname, (err, data) => {
             if (data) {
+              console.log("EEERM");
               res.writeHead(200, {
                 "Content-type": addons.getMT(get.pathname)
               });
