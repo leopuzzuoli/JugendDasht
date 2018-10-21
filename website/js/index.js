@@ -19,7 +19,7 @@ $('document').ready(() => {
                 var newImg = document.createElement('img')
                 $(newImg).attr("src", sources[i])
                 $(newImg).attr("class", "insta-image")
-                $("#insta").append(newImg);
+                $("#instaLatest").append(newImg);
             }
         }
     });
@@ -27,7 +27,7 @@ $('document').ready(() => {
     $.ajax({
         url: "daten/tweets.txt",
         success: function(result) {
-            var sources = result.split(",")
+            var sources = better.split(",")
             for (var i = sources.length - 1; i >= 0; i--) {
                 var newImg = document.createElement('img')
                 $(newImg).attr("src", sources[i])
