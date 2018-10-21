@@ -7,6 +7,7 @@ let addons = require("./addons");
 let rightsaccess = require("./checkaccessrights");
 let config = require("./content/server_only/config.js");
 let runnode = require("./runnode.js");
+let io = require("socket.io")(http);
 let server;
 
 if (process.argv[2] === "-s") {
