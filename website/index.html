@@ -16,19 +16,23 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"/>
         <!-- Custom styles for this template -->
         <link href="css/index.css" rel="stylesheet"/>
-        <!-- Bootstrap core JavaScript -->
-        <script src="vendor/jquery/jquery.min.js">
-        </script>
-        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
-        </script>
-        <!-- Plugin JavaScript -->
-        <script src="vendor/jquery-easing/jquery.easing.min.js">
-        </script>
-        <!-- Custom scripts for this template -->
-        <script src="js/grayscale.js">
-        </script>
-        <script src="js/index.js">
-        </script>
+        <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+            <!-- Bootstrap core JavaScript -->
+            <script src="vendor/jquery/jquery.min.js">
+            </script>
+            <script src="vendor/bootstrap/js/bootstrap.bundle.min.js">
+            </script>
+            <!-- Plugin JavaScript -->
+            <script src="vendor/jquery-easing/jquery.easing.min.js">
+            </script>
+            <script src="js/jquery.timespace.js">
+            </script>
+            <!-- Custom scripts for this template -->
+            <script src="js/grayscale.js">
+            </script>
+            <script src="js/index.js">
+            </script>
+        </link>
     </head>
     <body id="page-top">
         <!-- Header -->
@@ -48,19 +52,31 @@
             </div>
         </header>
         <!-- Network Section -->
-        <section class="networks text-center" id="about">
+        <section class=" text-center" id="about">
+            <div class="networks row">
+                <div class="col-sm" id="insta">
+                    <div class="network-name">
+                        Instagram #jugendhackt
+                    </div>
+                    <div id="latestPosts"></div>
+                </div>
+                <div class="col-sm">
+                    Hackdash
+                    <iframe allowtransparency="true" frameborder="0" height="600px" src="https://hackdash.org/embed/dashboards/jhackt2018?hide=title,desc,logo,pacnbar,pcontrib," title="Hackdash" width="100%">
+                    </iframe>
+                </div>
+                <div class="col-sm">
+                    Twitter
+                </div>
+                <div class="col-sm">
+                    (Slack)
+                </div>
+            </div>
             <div class="row">
-                <div class="col-sm">
-                    One of three columns
-                </div>
-                <div class="col-sm">
-                    One of three columns
-                </div>
-                <div class="col-sm">
-                    One of three columns
-                </div>
-                <div class="col-sm">
-                    One of three columns
+                <div class="col">
+                    Timeline
+                    <div id="timeline">
+                    </div>
                 </div>
             </div>
         </section>

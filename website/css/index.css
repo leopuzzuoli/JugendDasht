@@ -2,11 +2,17 @@ body {
     font-family: 'Nunito';
     letter-spacing: 0.0625em;
     background-color: rgba(22, 22, 22, 1);
+    overflow-x: hidden;
 }
 
 
-
+.insta-image {
+    width: 50%;
+    height: auto;
+    margin: 2px;
+}
 .col-sm {
+  margin-right: 2px;
   color: white;
   width: 25% !important;
 }
