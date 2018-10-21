@@ -18,10 +18,7 @@ $('document').ready(() => {
         });
     }
     getInstaImages()
-    
-    setInterval(function() {
-        getInstaImages()
-    }, 5000);
+    setInterval(getInstaImages(), 5000);
     //
     /* $.ajax({
          url: "daten/tweets.txt",
