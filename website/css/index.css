@@ -4,19 +4,25 @@ body {
     background-color: rgba(22, 22, 22, 1);
     overflow-x: hidden;
 }
-
+.networks {
+    height: 600px;
+}
 
 .insta-image {
-    width: 50%;
+    width: 100%;
     height: auto;
-    margin: 2px;
+}
+#instaLatest {
+    overflow-y: scroll;
+    height: 650px;
 }
 .col-sm {
-  margin-right: 2px;
-  color: white;
-  width: 25% !important;
+    margin-left: 5px;
+    color: white;
+    width: 25% !important;
 }
 /* --------------------------------------------- */
+
 a {
     color: #64a19d;
 }
@@ -24,9 +30,7 @@ a:focus, a:hover {
     text-decoration: none;
     color: #3c6360;
 }
-.networks .col-sm {
-    height: 600px;
-}
+
 .masthead {
     position: relative;
     width: 100%;

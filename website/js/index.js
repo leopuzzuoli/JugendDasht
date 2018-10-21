@@ -8,31 +8,35 @@ $('document').ready(() => {
         $(data.target).next('.col-sm').css('width', '40%')
     })
     //
-    $.ajax({
-        url: "daten/instafiles.txt",
-        success: function(result) {
-            var better = result.replace(/\[/g, "")
-            better = better.replace(/\"/g, "")
-            better = better.substring(0, better.length - 2)
-            var sources = better.split(",")
-            for (var i = sources.length - 1; i >= 0; i--) {
-                var newImg = document.createElement('img')
-                $(newImg).attr("src", sources[i])
-                $(newImg).attr("class", "insta-image")
-                $("#instaLatest").append(newImg);
+    setInterval(function() {
+        $.ajax({
+            url: "daten/instafiles.txt",
+            success: function(result) {
+                var better = result.replace(/\[/g, "")
+                better = better.replace(/\"/g, "")
+                better = better.substring(0, better.length - 2)
+                var sources = better.split(",")
+                for (var i = sources.length - 1; i >= 0; i--) {
+                    var newImg = document.createElement('img')
+                    $(newImg).attr("src", sources[i])
+                    $(newImg).attr("class", "insta-image")
+                    $("#instaLatest").append(newImg);
+                }
             }
-        }
-    });
+        });
+    }, 5000);
     //
     $.ajax({
         url: "daten/tweets.txt",
         success: function(result) {
-            var sources = better.split(",")
+            console.log(result)
+            var sources = result.split(",")
+            console.log(sources)
             for (var i = sources.length - 1; i >= 0; i--) {
-                var newImg = document.createElement('img')
-                $(newImg).attr("src", sources[i])
-                $(newImg).attr("class", "insta-image")
-                $("#insta").append(newImg);
+                var newText = document.createElement('p')
+                console.log(newText)
+                $(newText).text(sources[i])
+                $("#twitterLatest").append(newText);
             }
         }
     });
