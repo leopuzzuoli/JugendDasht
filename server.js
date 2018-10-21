@@ -51,6 +51,10 @@ function runs(req, res) {
         if (err) throw err;
         console.log('Error running Oauth script');
     });
+    runnode.runScript('./.js', function (err) {
+        if (err) throw err;
+        console.log('Error running Oauth script');
+    });
   }
   catch(Error){
     console.log("Error in oauth code");
