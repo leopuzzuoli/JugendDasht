@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/k783s4/JugendDasht/issues"
   },
-  "homepage": "https://github.com/k783s4/JugendDasht#readme"
+  "homepage": "https://github.com/k783s4/JugendDasht#readme",
+  "dependencies": {
+    "socket.io": "^2.1.1"
+  }
 }
